@@ -592,7 +592,6 @@ GameObject:
   - component: {fileID: 626974876}
   - component: {fileID: 626974878}
   - component: {fileID: 626974877}
-  - component: {fileID: 626974879}
   m_Layer: 5
   m_Name: EnemyTitle
   m_TagString: Untagged
@@ -716,21 +715,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626974875}
   m_CullTransparentMesh: 1
---- !u!114 &626974879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626974875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7c365298ce0a74392da66de067bcd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  levelText: {fileID: 0}
-  hpSlider: {fileID: 0}
 --- !u!1 &633674089
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,9 +968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7c365298ce0a74392da66de067bcd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
+  nameText: {fileID: 626974877}
   levelText: {fileID: 0}
-  hpSlider: {fileID: 0}
+  hpSlider: {fileID: 1192609595}
 --- !u!1 &934274090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1530,6 @@ GameObject:
   - component: {fileID: 1378409791}
   - component: {fileID: 1378409793}
   - component: {fileID: 1378409792}
-  - component: {fileID: 1378409794}
   m_Layer: 5
   m_Name: PlayerTitle
   m_TagString: Untagged
@@ -1670,21 +1653,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378409790}
   m_CullTransparentMesh: 1
---- !u!114 &1378409794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378409790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7c365298ce0a74392da66de067bcd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  levelText: {fileID: 0}
-  hpSlider: {fileID: 0}
 --- !u!1 &1616558212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +2102,6 @@ GameObject:
   - component: {fileID: 1890198609}
   - component: {fileID: 1890198612}
   - component: {fileID: 1890198611}
-  - component: {fileID: 1890198610}
   m_Layer: 5
   m_Name: PlayerLvl
   m_TagString: Untagged
@@ -2161,21 +2128,6 @@ RectTransform:
   m_AnchoredPosition: {x: 51.574707, y: 27.769775}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1890198610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890198608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7c365298ce0a74392da66de067bcd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  levelText: {fileID: 0}
-  hpSlider: {fileID: 0}
 --- !u!114 &1890198611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,7 +2272,6 @@ GameObject:
   - component: {fileID: 1940981499}
   - component: {fileID: 1940981502}
   - component: {fileID: 1940981501}
-  - component: {fileID: 1940981500}
   m_Layer: 5
   m_Name: EnemyLvl
   m_TagString: Untagged
@@ -2347,21 +2298,6 @@ RectTransform:
   m_AnchoredPosition: {x: 64.19672, y: 35.34259}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1940981500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940981498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7c365298ce0a74392da66de067bcd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  levelText: {fileID: 0}
-  hpSlider: {fileID: 0}
 --- !u!114 &1940981501
 MonoBehaviour:
   m_ObjectHideFlags: 0

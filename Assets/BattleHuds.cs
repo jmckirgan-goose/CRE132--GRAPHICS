@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleHuds : MonoBehaviour
 {
-    public Text nameText;
+    public TMP_Text nameText;
     public Text levelText;
     public Slider hpSlider;
 
