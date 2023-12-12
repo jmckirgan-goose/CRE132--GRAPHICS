@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -18,6 +21,8 @@ public class BattleSystem : MonoBehaviour
 
     Unit playerUnit;
     Unit enemyUnit;
+
+    public TMP_Text dialogueText;
 
     public BattleState state;
 
@@ -37,8 +42,18 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
+        dialogueText.text = "The " + enemyUnit.name + "Approaches... ";
+
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
-    }
 
+        state = BattleState.PLAYERTURN;
+        PlayerTurn();
+
+    }
+    
+    void PlayerTurn()
+    {
+        dialogueText = "Choose an action...";
+    }
 }
