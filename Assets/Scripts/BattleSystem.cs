@@ -91,6 +91,10 @@ public class BattleSystem : MonoBehaviour
         {
             state = BattleState.LOST;
             EndBattle();
+        } else
+        {
+            state = BattleState.PLAYERTURN;
+            PlayerTurn();
         }
     }
 
