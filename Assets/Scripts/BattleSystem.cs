@@ -31,10 +31,10 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        SetupBattle();
+        StartCoroutine(SetupBattle());
     }
 
-    void SetupBattle()
+    IEnumerator SetupBattle()
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
@@ -47,6 +47,8 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
 
+        yield return new WaitForSeconds(3f);
+
         state = BattleState.PLAYERTURN;
         PlayerTurn();
 
@@ -54,6 +56,6 @@ public class BattleSystem : MonoBehaviour
     
     void PlayerTurn()
     {
-        dialogueText = "Choose an action...";
+        dialogueText.text = "Choose an action: ";
     }
 }
