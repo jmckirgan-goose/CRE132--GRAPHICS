@@ -54,8 +54,67 @@ public class BattleSystem : MonoBehaviour
 
     }
     
+    IEnumerator PlayerAttack()
+    {
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+
+        enemyHud.SetHP(enemyUnit.currentHP);
+        dialogueText.text = "Attack successful!";
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        } else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+        
+    }
+
+    IEnumerator EnemyTurn()
+    {
+        dialogueText.text = enemyUnit.name + " attacks";
+
+        yield return new WaitForSeconds(2f);
+
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+
+        playerHud.SetHP(playerUnit.currentHP);
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
+        {
+            state = BattleState.LOST;
+            EndBattle();
+        }
+    }
+
+    void EndBattle()
+    {
+        if(state == BattleState.WON)
+        {
+            dialogueText.text = "Victory";
+        } else if (state == BattleState.LOST)
+        {
+            dialogueText.text = "You Died...";
+        }
+    }
+
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action: ";
+    }
+
+   public void OnAttackButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+        return;
+
+        StartCoroutine(PlayerAttack());
     }
 }
