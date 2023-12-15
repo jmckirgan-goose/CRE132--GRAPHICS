@@ -114,11 +114,32 @@ public class BattleSystem : MonoBehaviour
         dialogueText.text = "Choose an action: ";
     }
 
+    IEnumerator PlayerHeal()
+    {
+        playerUnit.Heal(6);
+
+        playerHud.SetHP(playerUnit.currentHP);
+        dialogueText.text = "DETERMINATION!";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
    public void OnAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
         return;
 
         StartCoroutine(PlayerAttack());
+    }
+
+    public void OnHealButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(PlayerHeal());
     }
 }
